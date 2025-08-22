@@ -53,9 +53,9 @@ const CampaignDetails5 = () => {
         </div>
 
         <div className="flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
-          <CountBox title="Days Left" value={9} />
-          <CountBox title={`Raised of {}`} value={254} />
-          <CountBox title="Total Backers" value={0.2} />
+          <CountBox title="Days Left" value="30" />
+          <CountBox title="Raised of 10 ETH" value="5.2 ETH" />
+          <CountBox title="Total Backers" value="18" />
         </div>
       </div>
 
@@ -70,7 +70,7 @@ const CampaignDetails5 = () => {
                 <img src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain"/>
               </div>
               <div>
-                <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">{0xE74B19D0da2Bfc42e89f88EdefB5525B15753074}</h4>
+                <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">0xE74B19D0da2Bfc42e89f88EdefB5525B15753074</h4>
                 <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">10 Campaigns</p>
               </div>
             </div>
@@ -80,7 +80,7 @@ const CampaignDetails5 = () => {
             <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Story</h4>
 
               <div className="mt-[20px]">
-                <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">{}</p>
+                <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">Revolutionary Tesla car innovation project focused on developing next-generation electric vehicle technology. We're working on advanced battery systems, autonomous driving capabilities, and sustainable manufacturing processes to create the future of transportation.</p>
               </div>
           </div>
 
@@ -90,8 +90,8 @@ const CampaignDetails5 = () => {
               <div className="mt-[20px] flex flex-col gap-4">
                 {/* {donators.length > 0 ? donators.map((item, index) => ( */}
                   <div  className="flex justify-between items-center gap-4">
-                    <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{25}. {0.1}</p>
-                    <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">{}</p>
+                    <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-all">1. 1.2 ETH</p>
+                    <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-all">0xABCD...EFGH</p>
                   </div>
                 {/* )) : ( */}
                   <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">No donators yet. Be the first one!</p>
@@ -104,7 +104,7 @@ const CampaignDetails5 = () => {
           <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Fund</h4>   
 
           <div className="mt-[20px] flex flex-col p-4 bg-[#1c1c24] rounded-[10px]">
-            <p className="font-epilogue fount-medium text-[20px] leading-[30px] text-center text-[#808191]">
+            <p className="font-epilogue font-medium text-[20px] leading-[30px] text-center text-[#808191]">
               Fund the campaign
             </p>
             <div className="mt-[30px]">

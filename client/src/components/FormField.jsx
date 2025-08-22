@@ -1,19 +1,25 @@
 import React from 'react'
 
-const FormField = ({ labelName, placeholder, inputType, isTextArea, value, handleChange }) => {
+const FormField = ({ labelName, placeholder, inputType, isTextArea, value, handleChange, error, ...props }) => {
   return (
-    <label className="flex-1 w-full flex flex-col">
+    <div className="space-y-2">
       {labelName && (
-        <span className="font-epilogue font-medium text-[14px] leading-[22px] text-[#808191] mb-[10px]">{labelName}</span>
+        <label className="block text-sm font-medium text-white">
+          {labelName}
+        </label>
       )}
+      
       {isTextArea ? (
         <textarea 
           required
           value={value}
           onChange={handleChange}
-          rows={10}
+          rows={6}
           placeholder={placeholder}
-          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]"
+          className={`pro-input w-full px-4 py-3 text-sm resize-none ${
+            error ? 'border-red-500 focus:border-red-500' : ''
+          }`}
+          {...props}
         />
       ) : (
         <input 
@@ -21,12 +27,18 @@ const FormField = ({ labelName, placeholder, inputType, isTextArea, value, handl
           value={value}
           onChange={handleChange}
           type={inputType}
-          step="0.1"
           placeholder={placeholder}
-          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]"
+          className={`pro-input w-full px-4 py-3 text-sm ${
+            error ? 'border-red-500 focus:border-red-500' : ''
+          }`}
+          {...props}
         />
       )}
-    </label>
+      
+      {error && (
+        <p className="text-red-400 text-sm">{error}</p>
+      )}
+    </div>
   )
 }
 

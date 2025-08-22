@@ -1,9 +1,7 @@
 export { default as Home } from './Home';
-export { default as Profile } from './Profile';
 export { default as CreateCampaign } from './CreateCampaign';
 export { default as CampaignDetails } from './CampaignDetails';
-export { default as CampaignDetails2 } from './CampaignDetails2';
-export { default as CampaignDetails3 } from './CampaignDetails3';
-export { default as CampaignDetails4 } from './CampaignDetails4';
-export { default as CampaignDetails5 } from './CampaignDetails5';
-export { default as CampaignDetails6 } from './CampaignDetails6';
+export { default as AdminLogin } from './AdminLogin';
+export { default as AdminPanel } from './AdminPanel';
+export { default as Favorites } from './Favorites';
+export { default as Analytics } from './Analytics';

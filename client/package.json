@@ -15,9 +15,9 @@
     "react": "^18.2",
     "react-dom": "^18.2",
     "react-router-dom": "^6.4.4",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "uuid": "^11.1.0"
   },
-  
   "devDependencies": {
     "@vitejs/plugin-react": "^2",
     "autoprefixer": "^10.4.15",

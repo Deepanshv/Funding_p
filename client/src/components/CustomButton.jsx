@@ -1,11 +1,14 @@
 import React from 'react'
 
-const CustomButton = ({ btnType, title, handleClick, styles }) => {
+const CustomButton = ({ btnType, title, handleClick, styles, disabled = false }) => {
   return (
     <button
       type={btnType}
-      className={`font-epilogue font-semibold text-[16px] leading-[26px] text-white   bg-gradient-to-r from-pink-500 to-rose-500 min-h-[52px] px-4  rounded-[10px] ${styles}`}
       onClick={handleClick}
+      disabled={disabled}
+      className={`pro-button font-medium ${styles} ${
+        disabled ? 'opacity-50 cursor-not-allowed' : ''
+      }`}
     >
       {title}
     </button>

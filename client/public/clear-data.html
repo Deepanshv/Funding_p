@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear All Data</title>
+</head>
+<body>
+    <h1>Clearing All Demo Data...</h1>
+    <script>
+        // Clear all localStorage data
+        localStorage.clear();
+        
+        // Also specifically remove our keys
+        localStorage.removeItem('campaigns');
+        localStorage.removeItem('favorites');
+        localStorage.removeItem('isAdmin');
+        
+        alert('All demo data cleared! Please refresh the main application.');
+        console.log('All data cleared successfully!');
+    </script>
+    <p>All demo data has been cleared. Please close this tab and refresh your main application.</p>
+</body>
+</html>

@@ -1,50 +1,42 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
-import { logo, thirdweb} from '../assets';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { navlinks } from '../constants';
-
-const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
-  <div className={`w-[48px] h-[50px] rounded-[10px] ${isActive && isActive === name && 'bg-[#2c2f32]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
-    {!isActive ? (
-      <img src={imgUrl} alt="fund_logo" className="w-1/2 h-1/2" />
-    ) : (
-      <img src={imgUrl} alt="fund_logo" className={`w-1/2 h-1/2 ${isActive !== name && 'grayscale'}`} />
-    )}
-  </div>
-)
+import { DashboardIcon, HeartIcon, ChartIcon, UserIcon } from './Icons';
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState('dashboard');
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">
-      <Link to="/">
-        <Icon styles="w-[52px] h-[52px] bg-[#2c2f32]" imgUrl={thirdweb} />
-      </Link>
-
-      <div className="flex-1 flex flex-col justify-between items-center bg-[#1c1c24] rounded-[20px] w-[76px] py-4 mt-12">
-        <div className="flex flex-col justify-center items-center gap-3">
+    <aside className="w-64 bg-slate-800 border-r border-slate-700 min-h-screen fixed left-0 top-0 z-10">
+      <div className="p-6">
+        <h2 className="text-lg font-semibold text-white mb-6">Navigation</h2>
+        
+        <nav className="space-y-2">
           {navlinks.map((link) => (
-            <Icon 
+            <button
               key={link.name}
-              {...link}
-              isActive={isActive}
-              handleClick={() => {
-                if(!link.disabled) {
-                  setIsActive(link.name);
-                  navigate(link.link);
-                }
-              }}
-            />
+              onClick={() => navigate(link.link)}
+              disabled={link.disabled}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                isActive(link.link)
+                  ? 'bg-blue-600 text-white'
+                  : 'text-slate-300 hover:bg-slate-700 hover:text-white'
+              } ${link.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+            >
+              {link.iconType === 'dashboard' && <DashboardIcon className="w-5 h-5" />}
+              {link.iconType === 'heart' && <HeartIcon className="w-5 h-5" />}
+              {link.iconType === 'chart' && <ChartIcon className="w-5 h-5" />}
+              {link.iconType === 'user' && <UserIcon className="w-5 h-5" />}
+              <span className="capitalize font-medium">{link.name}</span>
+            </button>
           ))}
-        </div>
-
-       
+        </nav>
       </div>
-    </div>
-  )
-}
+    </aside>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

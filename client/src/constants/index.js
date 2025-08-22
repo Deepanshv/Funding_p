@@ -5,35 +5,19 @@ export const navlinks = [
     name: 'dashboard',
     imgUrl: dashboard,
     link: '/',
+    iconType: 'dashboard'
   },
   {
-    name: 'campaign',
-    imgUrl: createCampaign,
-    link: '/create-campaign',
+    name: 'favorites',
+    imgUrl: '❤️',
+    link: '/favorites',
+    iconType: 'heart'
+  },
+  {
+    name: 'analytics',
+    imgUrl: '📊',
+    link: '/analytics',
+    iconType: 'chart'
   },
 
-  
-  {
-    name: 'details',
-    imgUrl: payment,
-    link: '/campaign-details',
-    // disabled: true,
-  },
-  // {
-  //   name: 'withdraw',
-  //   imgUrl: withdraw,
-  //   link: '/',
-  //   disabled: true,
-  // },
-  {
-    name: 'profile',
-    imgUrl: profile,
-    link: '/profile',
-  },
-  {
-    name: 'logout',
-    imgUrl: logout,
-    link: '/',
-    disabled: true,
-  },
 ];
